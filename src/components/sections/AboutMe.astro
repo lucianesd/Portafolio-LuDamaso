@@ -1,0 +1,30 @@
+---
+import Container from '@components/ui/Container.astro'; 
+import Paragraph from '@components/ui/Paragraph.astro';
+import Title from '@components/ui/Title.astro';
+---
+<section      
+      class="flex flex-wrap relative overflow-hidden">
+      <Container className="items-center justify-center text-center mb-8 pb-11 gap-30 md:gap-20 h-[300px] mt-11">
+        <Title className="text-green-400 pb-4">Sobre Mi</Title>
+        <Container className="justify-center flex flex-col items-center mx-2 ">
+            <div
+            class="flex flex-col items-center text-center relative lg:flex-grow md:px-16  md:items-start md:text-left
+                mb-16 md:mb-0 ">
+            
+            <article class="text-start text-white items-start ms-4 ">            
+              <Paragraph className="leading-relaxed">               
+                Mi formación como Técnica en Administración de Sistemas y Software Libre (Univ. Nac. del Comahue, 2017) me brindó una base robusta que he aplicado y expandido, principalmente como programadora y desarrolladora frontend en el Instituto Universitario Patagónico de las Artes (IUPA) entre 2018 y 2024. 
+               </Paragraph>
+               <Paragraph className="leading-relaxed ">
+                 Allí, me especialicé en la creación de interfaces de usuario y la optimización de su experiencia. Utlizando lenguajes como Javascript y C#, plataformas como Wordpress, bases de datos como Postgresql y Mysql, y frameworks como Blazor y React, entre otros.
+                </Paragraph>
+                <Paragraph className="leading-relaxed my-2">
+                     Actualmente también utilizo el lenguaje Typescript, los frameworks Astro y Nextjs y herramientas de Inteligencia Artificial, además de las tecnologías ya citadas, en mis proyectos como freelancer.
+                <Paragraph className="leading-relaxed my-2">
+                Mis pasiones por el cine y la fotografía enriquecen mi visión estética y mi atención al detalle, elementos que integro en cada proyecto web.           
+              </Paragraph>
+            </article>
+        </Container>
+      </Container>
+      </section>

@@ -1,0 +1,27 @@
+---
+export interface Props{
+    className?:string,    
+    icon: string; 
+    iconDescription:string,
+    url:string,
+    
+}
+
+const {className, icon, iconDescription, url} = Astro.props
+
+---
+<a href={url} target="_blank" rel="noopener noreferrer">   
+    <button class={`inline-flex text-white bg-blue-500 border-0 me-2 py-2 px-4 
+    focus:outline-none hover:bg-blue-600 hover:shadow-[0_0_20px_rgb(0,200,255,0.8)] rounded-full text-md ${className}`}>
+        <img src={icon} alt={iconDescription} class="w-6 h-6"/>       
+    </button>
+</a>
+
+<style>
+    button{
+        transition: all 0.3s ease;
+    }
+    button:hover{
+        transform: scale(1.1);
+    }
+    </style>

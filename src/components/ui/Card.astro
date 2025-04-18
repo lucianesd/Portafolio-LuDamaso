@@ -1,0 +1,145 @@
+---
+
+import Paragraph from '@components/ui/Paragraph.astro';
+import Link from '@components/ui/Link.astro'; // El botón de acción principal (icono)
+import { IconFileDescription } from '@tabler/icons-react';
+// No necesitamos SocialButton aquí según la estructura final deseada
+
+export interface Props {
+  title: string;
+  description: string;
+  link: string; // Enlace principal (usado en hover y boton de acción)
+  text: string; // Texto para el span dentro del área hover (Ej: "Video", "Enlace")
+  icon: string; // Icono para el botón de acción final
+  iconDescription: string; // Descripción del icono para accesibilidad
+  image: string; // Imagen de fondo para el área hover
+  repoUrl: string; // Enlace del botón inferior
+  className?: string;
+}
+
+const { title, description, link, text, icon, iconDescription, image, repoUrl, className } = Astro.props;
+---
+
+<div class:list={["project_box", className]}>
+  
+  {/* Área con Imagen de Fondo y Hover Effect */}
+  <div class="inner" style={`background-image: url(${image});`}>
+    <a href={link} class="project_click group" target="_blank" rel="noopener noreferrer"> {/* 'group' para hover */}
+      <div class="flex_this">
+        <h3 class="project_title">{title}</h3>
+        <span class="project_link">{text}</span>
+      </div>
+    </a>
+  </div>
+
+  {/* Descripción */}
+  <Paragraph className="text-white mx-4 my-4 text-start text-lg lg:text-md flex-grow"> 
+    {description}
+  </Paragraph>
+
+  {/* Botón de Acción Principal (GitHub/Web) */}
+   <div class="text-start mx-4 mb-4 mt-auto">
+     
+    <Link url={repoUrl} icon={icon} iconDescription={`Icono de enlace al ${iconDescription} de ${title}` } /> 
+  </div>
+</div>
+
+<style>
+  .project_box {
+    background-color: #282c34; /* Fondo oscuro para la caja completa */
+    border: 1px solid #444;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease;
+  }
+  .project_box:hover {
+     box-shadow: 0 8px 25px rgba(0, 200, 255, 0.15); /* Sombra sutil azulada al hacer hover en toda la caja */
+  }
+
+  .project_box .inner {
+    /* background-image es seteado inline via style */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    height: 250px; /* Altura fija para la imagen */
+    position: relative; /* Necesario para el overlay absoluto */
+    overflow: hidden; /* Asegura que el overlay no se salga */
+  }
+
+  /* Estilos copiados y adaptados del original para el hover */
+  .project_box .inner .project_click {
+    align-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4); /* Overlay inicial */
+    color: white;
+    display: flex; /* Usamos flex aquí también */
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    justify-content: center; /* Centra flex_this */
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 300ms ease;
+    position: absolute; /* Posiciona sobre el fondo */
+    top: 0;
+    left: 0;
+  }
+
+  .project_box .inner .project_click:hover {
+    background-color: rgba(10, 27, 51, 0.9); /* Overlay más oscuro en hover */
+    color: #fff;
+  }
+
+  .flex_this {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 15px;
+    transition: transform 300ms ease; /* Transición sutil de escala */
+    width: 100%;
+  }
+
+  /* Efecto de movimiento/escala en hover sobre .project_click */
+  .project_box .inner .project_click:hover .flex_this {
+     transform: scale(1.03); /* Ligero zoom al texto */
+  }
+
+  .project_title {
+    display: block;
+    font-size: 1.5em; /* Un poco más grande */
+    font-weight: 700;
+    margin: 0 0 15px; /* Espacio entre título y span */
+    width: 100%;
+    color: #fff; /* Asegurar color blanco */
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7); /* Sombra para legibilidad */
+  }
+
+  .project_link {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0,0,0,0.3);
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 8px 20px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    transition: all 300ms ease;
+  }
+
+  .project_click:hover .project_link { /* Estilo del span en hover */
+    border-color: #fff;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: scale(1.05); /* Escala también el botón de texto */
+  }
+
+
+</style>

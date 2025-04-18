@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Onest Variable", sans-serif;
+  background-color: #0f0a26;
+}
+
+.navbar {
+  background-color: #0f0a26;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 600;
+  height: 80px;
+}
+
+.flex_this {
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  display: inherit;
+  flex-wrap: inherit;
+  height: auto;
+  margin: 0;
+  padding: 10px;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  width: 100%;
+}
+
+.box-01 .inner {
+  background-image: url("http://localhost:5173/src/assets/projects/mitienda.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.box-02 .inner {
+  background-image: url("http://localhost:5173/src/assets/projects/rucaservices.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.box-03 .inner {
+  background-image: url("http://localhost:5173/src/assets/projects/azanza.jpg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

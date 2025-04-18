@@ -1,0 +1,14 @@
+---
+import Container from "@components/ui/Container.astro";
+import Paragraph from "@components/ui/Paragraph.astro";
+const currentYear = new Date().getFullYear();
+---
+
+<footer >
+  <Container className="space-y-12 pb-4 lg:pb-10 ">
+   <div class="text-center justify-items-center  py-6 text-green-700 hover:text-green-800">
+     <hr class="border-t-green-600 pb-5 "  />
+     <Paragraph>Copyright © {currentYear} Luciane Damaso</Paragraph>  
+    </div>
+  </Container>
+</footer>

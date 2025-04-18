@@ -1,0 +1,192 @@
+---
+// src/components/Nav.astro
+
+interface NavItem {
+  href: string;
+  text: string;
+  highlighted?: boolean;
+}
+
+const navItems: NavItem[] = [
+  { href: "/", text: "Inicio" },
+  { href: "/#habilidades", text: "Habilidades" },
+  { href: "/#experiencia", text: "Experiencia" },
+  { href: "/#idiomas", text: "Idiomas" },
+  { href: "/#proyectos", text: "Proyectos" },
+   { href: "/#sobre-mi", text: "Sobre Mi" },
+];
+
+const rmTrailingSlash = (path: string): string => {
+  return path.endsWith("/") && path.length > 1
+    ? path.slice(0, path.length - 1)
+    : path;
+}
+const pathname = rmTrailingSlash(Astro.url.pathname);
+---
+
+<header class="navbar fixed top-0 pt-6 pb-2 left-0 right-0 z-30 w-full">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
+   
+    <div class="flex items-center gap-x-2">
+      <a href="/" class="flex items-center gap-x-2">
+       { /* <img class="w-auto h-14" src="" alt="Logo de Luciane Damaso"/> */}
+        <p class="font-bold text-2xl text-white hover:text-green-400">Lu Damaso</p>
+      </a>
+    </div>
+   
+    <div class="flex lg:hidden">
+      <button
+        type="button"
+        id="menu-toggle-btn" 
+        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white hover:text-green-400"
+        aria-label="Abrir menú principal"
+        aria-expanded="false" 
+        aria-controls="mobile-menu-panel" 
+      >
+        <svg class="size-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </button>
+    </div>
+
+    {/* Navegación Desktop (Oculta en mobile) */}
+    <nav class="hidden lg:flex lg:gap-x-8 items-center" aria-label="Navegación principal">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            "text-white text-lg mx-4 hover:text-green-400",
+           
+          ]}
+        >
+          {item.text}
+        </a>
+      ))}
+    </nav>
+  </div>
+
+  <div
+    id="mobile-menu-panel" 
+    class="lg:hidden fixed inset-y-0 right-0 z-50 w-full max-w-xs overflow-y-auto bg-slate-950 px-6 py-6 sm:ring-1 sm:ring-gray-500/10 hidden transition-transform duration-300 ease-in-out translate-x-full"
+    aria-modal="true"
+    role="dialog"
+  >
+   
+    <div class="flex items-center justify-between mb-6">
+      <a href="/" class="-m-1.5 p-1.5 flex items-center gap-x-2">
+        {/* <img class="w-auto h-10" src="/perfil.jpg" alt="Logo de Lu Damaso"/>    */}
+      </a>
+      <button
+        type="button"
+        id="menu-close-btn" 
+        class="-m-2.5 rounded-md p-2.5 text-white hover:text-green-400"
+        aria-label="Cerrar menú"
+      >
+        <svg class="size-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    
+    <div class="mt-6 flow-root">
+      <div class="-my-6 divide-y divide-gray-200">
+        <div class="space-y-2 py-6">
+          {navItems.map((item) => (
+            <a
+              href={item.href}
+              class:list={[
+                "block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-100/10 hover:text-green-400 mobile-menu-link", // Clase para JS
+                 { "bg-emerald-50 text-brand-red": item.highlighted },
+                 { "text-brand-green bg-gray-100/10": pathname === rmTrailingSlash(item.href.split('#')[0]) || (item.href === '/' && pathname === '') }
+              ]}              
+            >
+              {item.text}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+{/* Script Vanilla JS para manejar el menú */}
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggleBtn = document.getElementById('menu-toggle-btn');
+    const menuCloseBtn = document.getElementById('menu-close-btn');
+    const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+    const mobileMenuLinks = mobileMenuPanel.querySelectorAll('a.mobile-menu-link'); // Seleccionamos los enlaces
+
+    function openMenu() {
+      if (mobileMenuPanel) {
+        mobileMenuPanel.classList.remove('hidden');
+        // Forzar reflow para asegurar que la transición se aplique desde 'hidden'
+        void mobileMenuPanel.offsetWidth; 
+        mobileMenuPanel.classList.remove('translate-x-full'); // Inicia transición
+        document.body.classList.add('overflow-hidden');
+        menuToggleBtn?.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    function closeMenu() {
+      if (mobileMenuPanel) {
+        mobileMenuPanel.classList.add('translate-x-full'); // Inicia transición de salida
+        // Esperar a que termine la transición para añadir hidden (opcional, mejora visual)
+        // Si no se usa timeout, simplemente añadir hidden y quitar overflow:
+        // mobileMenuPanel.classList.add('hidden');
+        // document.body.classList.remove('overflow-hidden');
+        
+        // Con timeout para ocultar después de la transición:
+         setTimeout(() => {
+             mobileMenuPanel.classList.add('hidden');
+         }, 300); // Debe coincidir con la duration de la transición (duration-300)
+
+        document.body.classList.remove('overflow-hidden');
+        menuToggleBtn?.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    // Event listener para el botón de abrir
+    menuToggleBtn?.addEventListener('click', (e) => {
+        e.stopPropagation(); // Evita que el click llegue al listener del documento
+        const isExpanded = menuToggleBtn.getAttribute('aria-expanded') === 'true';
+        if (!isExpanded) {
+            openMenu();
+        } else {
+            // Técnicamente este botón solo debería abrir, pero por si acaso
+            closeMenu();
+        }
+    });
+
+    // Event listener para el botón de cerrar
+    menuCloseBtn?.addEventListener('click', () => {
+      closeMenu();
+    });
+
+    // Event listener para los enlaces del menú
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        closeMenu();
+        // No necesitamos e.stopPropagation() aquí si queremos que la navegación ocurra
+      });
+    });
+
+    // Event listener para la tecla Escape
+    document.addEventListener('keydown', (event) => {
+      const isMenuOpen = menuToggleBtn?.getAttribute('aria-expanded') === 'true';
+      if (event.key === 'Escape' && isMenuOpen) {
+        closeMenu();
+      }
+    });
+
+    // Event listener para cerrar al hacer clic fuera (opcional)
+    document.addEventListener('click', (event) => {
+       const isMenuOpen = menuToggleBtn?.getAttribute('aria-expanded') === 'true';
+       if (!mobileMenuPanel?.contains(event.target) && !menuToggleBtn?.contains(event.target) && isMenuOpen) {
+          closeMenu();
+       }
+    });
+
+  });
+</script>

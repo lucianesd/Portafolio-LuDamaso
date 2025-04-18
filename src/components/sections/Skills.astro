@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets'; // Importa el componente Image de Astro
+import Container from "@components/ui/Container.astro";
+import Paragraph from "@components/ui/Paragraph.astro";
+import Title from "@components/ui/Title.astro";
+import { tools } from "../../data/constants.js";
+
+---
+
+<section class="flex flex-col relative overflow-hidden">
+    <Container className="flex flex-wrap items-center justify-center py-16">       
+        <div class="relative md:border-r-1 md:border-green-400 md:pe-3 lg:py-7 xl:py-8 
+            lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-1/2">  
+            <div class="items-center text-center lg:text-start lg:items-start">
+                <Title className="text-green-400">Habilidades</Title>                            
+            </div>
+            <div class="text-start items-start text-white mx-4">
+                <Paragraph className="mt-8">
+                    Desarrollo de proyectos de Frontend con React y Astro o NextJS (con los lenguajes Javascript y Typescript). Asi como desarrollo de aplicaciones para desktop en Blazor (con el lenguaje C#). 
+                </Paragraph>
+                <Paragraph className="mt-1">                    
+                    Contribución en el diseño y implementación de base de datos en PostgreSQL, MariaDB y MongoDB. 
+                    </Paragraph>
+                <Paragraph className="mt-1">  
+                    Diseño, implementación y mantenimiento de Páginas Web en Wordpress.              
+                   </Paragraph>
+                <Paragraph className="mt-1">  
+                    Administración de Plataforma de Aulas Virtuales (a través de Moodle).     
+                </Paragraph>
+            </div>        
+        </div>     
+         <div class="flex flex-col md:w-1/2 md:pl-12 mt-6 mx-4">
+            <nav class="flex flex-wrap list-none items-center justify-center ms-8 md:ms-3">
+                {tools.map((tool) => (
+                    <li class="lg:w-1/4 mb-4 w-1/2">       
+                        <Image               
+                            src={tool.icon}                                 
+                            alt={tool.description}                                 
+                            class="rounded-full w-18 h-18 mx-1 object-cover"               
+                        />      
+                    </li>
+                ))}
+            </nav>
+        </div>
+    </Container>    
+</section>
