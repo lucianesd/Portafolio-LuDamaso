@@ -33,25 +33,25 @@ export const experiences = [
       "Desarrolladora Frontend con Astro, React, Nextjs, Typescript y Tailwindcss. Desarrolladora de Páginas Web en Wordpress.",
   },
   {
-    period: "ene-2024 a sep-2024",
-    title: "Administradora de Campus Virtual y Desarroladora Frontend",
+    period: "feb-2024 a sep-2024",
+    title: "Desarroladora Frontend",
     company: "Instituto Universitario Patagónico de las Artes (IUPA)",
     description:
       "Administradora del Campus Virtual Universitario (Plataforma Moodle). Desarrolladora Frontend de nuevos componentes y actualizaciones de Plataforma de Gestión Académica de Escuela de Arte Provincial, asociada a la universidad.",
   },
   {
-    period: "oct-2020 a dic-2023",
+    period: "nov-2020 a feb-2024",
     title: "Desarrolladora Frontend",
     company: "IUPA",
     description:
       "Desarroladora Frontend de la Plataforma de Gestión Académica de Escuela de Arte Provincial, asociada a la universidad con lenguaje C#. Desarrollo de páginas web de Soporte a los Usuarios y de la Biblioteca de la Universidad, entre otras.",
   },
   {
-    period: "mar-2018 a dic-2020",
-    title: "Técnica en Administración de Sistemas",
+    period: "mar-2018 a nov-2020",
+    title: "Técnica en Admin. de Sistemas",
     company: "IUPA",
     description:
-      "Soporte a usuarios en la utilización de Plataforma de Gestión Académica de Universitaria (SIU), así como soporte en la utilización de otras plataformas academicas, recursos de ofimática y hardware.",
+      "Soporte a usuarios en la utilización de Plataforma de Gestión Académica de Universitaria (SIU), así como soporte en la utilización de otras plataformas académicas, recursos de ofimática y hardware.",
   },
 ];
 
@@ -132,7 +132,7 @@ export const projects = [
   {
     nombre: "Ruca Services",
     descripcion:
-      "Pagina web creada para el cliente Ruca Services creada con Astro, React, Typescript, Tailwind CSS",
+      "Página web creada para el cliente Ruca Services creada con Astro, React, Typescript, Tailwind CSS",
     tecnologias: ["Astro", "React", "Typescript", "Tailwind CSS"],
     textoBoton: "Enlace",
     enlace: "https://rucaservices.com.ar/",
