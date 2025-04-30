@@ -25,7 +25,7 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
 ---
 
 <header class="navbar fixed top-0 py-4 left-0 right-0 z-30 w-full">
-  <div class="max-w-7xl mx-auto flex items-center justify-between px-4">
+  <div class="max-w-5xl mx-auto flex items-center justify-between px-4">
    
     <div class="flex items-center gap-x-2">
       <a href="/" class="flex items-center gap-x-2">
@@ -49,7 +49,7 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
     </div>
 
     {/* Navegación Desktop (Oculta en mobile) */}
-    <nav class="hidden lg:flex lg:gap-x-8 items-center pb-4" aria-label="Navegación principal">
+    <nav class="hidden lg:flex lg:gap-x-6 items-center pb-5" aria-label="Navegación principal">
       {navItems.map((item) => (
         <a
           href={item.href}
@@ -66,7 +66,7 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
 
   <div
     id="mobile-menu-panel" 
-    class="lg:hidden fixed inset-y-0 right-0 z-50 w-full max-w-xs overflow-y-auto bg-slate-950 px-6 py-6 sm:ring-1 sm:ring-gray-500/10 hidden transition-transform duration-300 ease-in-out translate-x-full"
+    class="lg:hidden fixed inset-y-0 right-0 z-40 w-full max-w-xs overflow-y-auto bg-slate-950 px-6 py-6 sm:ring-1 sm:ring-gray-500/10 hidden transition-transform duration-300 ease-in-out translate-x-full"
     aria-modal="true"
     role="dialog"
   >
@@ -95,7 +95,7 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
             <a
               href={item.href}
               class:list={[
-                "block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-100/10 hover:text-green-400 mobile-menu-link", // Clase para JS
+                "block rounded-lg px-3 py-2 text-lg font-semibold leading-7 text-white hover:bg-gray-100/10 hover:text-green-400 mobile-menu-link", // Clase para JS
                  { "bg-emerald-50 text-brand-red": item.highlighted },
                  { "text-brand-green bg-gray-100/10": pathname === rmTrailingSlash(item.href.split('#')[0]) || (item.href === '/' && pathname === '') }
               ]}              
@@ -131,10 +131,8 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
     function closeMenu() {
       if (mobileMenuPanel) {
         mobileMenuPanel.classList.add('translate-x-full'); // Inicia transición de salida
-        // Esperar a que termine la transición para añadir hidden (opcional, mejora visual)
-        // Si no se usa timeout, simplemente añadir hidden y quitar overflow:
-        // mobileMenuPanel.classList.add('hidden');
-        // document.body.classList.remove('overflow-hidden');
+        // Esperar a que termine la transición para añadir hidden (opcional, mejora visual)        
+       
         
         // Con timeout para ocultar después de la transición:
          setTimeout(() => {
@@ -186,6 +184,5 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
           closeMenu();
        }
     });
-
   });
 </script>
