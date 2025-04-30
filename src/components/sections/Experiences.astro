@@ -8,7 +8,7 @@ import Paragraph from '@components/ui/Paragraph.astro';
 
 <section      
       class="flex flex-col relative overflow-hidden">
-      <Container className="mx-4 flex px-5 py-16 md:flex-row flex-col items-center">
+      <Container className="mx-3 flex px-5 py-16 md:flex-row flex-col items-center">
         <div          
           class="flex flex-col items-center text-center md:items-start lg:text-left lg:flex-grow lg:w-1/2 px-8 lg:pl-8   ">
           <Title className="text-blue-400">
@@ -16,7 +16,7 @@ import Paragraph from '@components/ui/Paragraph.astro';
           </Title>
           {experiences.map((exp) => (
             <div  class="relative py-6 pl-8 sm:pl-32 group">
-              <h3 class="mb-1 text-2xl font-semibold sm:mb-0 text-blue-400 ps-3 md:ps-20 text-start">
+              <h3 class="mb-1 text-2xl font-semibold sm:mb-0 text-blue-400 ps-2 md:ps-20 text-start">
                 {exp.title}
               </h3>
               <div
@@ -31,7 +31,7 @@ import Paragraph from '@components/ui/Paragraph.astro';
                   after:rounded-full sm:after:ml-[11.5rem] after:-translate-x-1/2 
                   after:translate-y-3"
               >
-                <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-sm font-bold uppercase w-45 h-10 mb-3 sm:mb-0 text-white bg-blue-500 rounded-full">
+                <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-sm font-bold uppercase w-50 h-10 mb-3 sm:mb-0 text-white bg-blue-500 rounded-full">
                   {exp.period}
                 </time>
                 <Paragraph className="text-lg font-bold text-gray-200 md:ps-20 ps-3 text-start">

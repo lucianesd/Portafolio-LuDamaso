@@ -48,7 +48,7 @@ export const experiences = [
   },
   {
     period: "mar-2018 a nov-2020",
-    title: "Técnica en Admin. de Sistemas",
+    title: "Técnica en Adm. Sistemas",
     company: "IUPA",
     description:
       "Soporte a usuarios en la utilización de Plataforma de Gestión Académica de Universitaria (SIU), así como soporte en la utilización de otras plataformas académicas, recursos de ofimática y hardware.",
