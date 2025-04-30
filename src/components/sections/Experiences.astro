@@ -1,4 +1,59 @@
 ---
+import { experiences } from 'src/data/constants';
+import Container from '@components/ui/Container.astro';
+import Title from '@components/ui/Title.astro';
+import Paragraph from '@components/ui/Paragraph.astro';
+
+---
+<section class="relative pt-16">      
+  <div class="flex flex-col items-center text-center">
+    <Title className="text-blue-400">            
+    Experiencia          
+  </Title>
+  </div>     
+  <Container className=" flex flex-col md:flex-row  overflow-hidden mx-3 px-5  items-center">  
+   <div                    
+     class="flex flex-col items-center text-center lg:items-start lg:text-left lg:flex-grow lg:w-1/2 px-8 lg:pl-8">          
+              
+    {experiences.map((exp) => (            
+    <div  
+    class="relative py-6 pl-8 sm:pl-32 group">              
+      <h3 
+        class="mb-1 text-2xl lg:text-xl font-semibold sm:mb-0 text-blue-400 ps-2 md:ps-20 text-start"
+      >                
+        {exp.title}              
+      </h3>              
+      <div                
+        class="flex flex-col sm:flex-row items-start mb-1                                             group-last:before:hidden before:absolute                                         
+        before:left-2 sm:before:left-0 before:h-full                                        
+        before:px-px before:bg-slate-300 sm:before:ml-[11.5rem]                                         
+        before:self-start before:-translate-x-1/2                                         before:translate-y-3 after:absolute after:left-2                                         sm:after:left-0 after:w-2 after:h-2 after:bg-blue-600                                         after:border-4 after:box-content after:border-slate-50   
+        after:rounded-full sm:after:ml-[11.5rem] 
+        after:-translate-x-1/2 after:translate-y-3"
+      >                
+        <time 
+          class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-sm font-bold uppercase w-40 h-10 mb-3 sm:mb-0 text-white bg-blue-500 rounded-full"
+        >                  
+          {exp.period}                
+        </time>                
+        <Paragraph className="text-lg font-bold text-gray-200 ps-3 md:ps-20 text-start py-1">                 
+          {exp.company}                
+        </Paragraph>             
+      </div>              
+      <Paragraph className="text-slate-300 lg:ps-20 ps-3 md:ps-20 text-start">                
+        {exp.description}              
+      </Paragraph>            
+      </div>          
+      
+    ))}        
+    </div>      
+  </Container>    
+</section>    
+
+
+{/*
+
+    ---
 
 import { experiences } from 'src/data/constants';
 import Container from '@components/ui/Container.astro';
@@ -28,10 +83,10 @@ import Paragraph from '@components/ui/Paragraph.astro';
                   before:translate-y-3 after:absolute after:left-2 
                   sm:after:left-0 after:w-2 after:h-2 after:bg-blue-600 
                   after:border-4 after:box-content after:border-slate-50 
-                  after:rounded-full sm:after:ml-[11.5rem] after:-translate-x-1/2 
+                  after:rounded-full sm:after:ml-[12.5rem] after:-translate-x-1/2 
                   after:translate-y-3"
               >
-                <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-sm font-bold uppercase w-50 h-10 mb-3 sm:mb-0 text-white bg-blue-500 rounded-full">
+                <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-sm font-bold uppercase w-47 h-10 mb-3 sm:mb-0 text-white bg-blue-500 rounded-full">
                   {exp.period}
                 </time>
                 <Paragraph className="text-lg font-bold text-gray-200 md:ps-20 ps-3 text-start">
@@ -48,3 +103,4 @@ import Paragraph from '@components/ui/Paragraph.astro';
     </section>
   
 
+*/}

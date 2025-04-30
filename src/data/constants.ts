@@ -30,24 +30,24 @@ export const experiences = [
     title: "Desarrolladora Frontend",
     company: "Freelancer",
     description:
-      "Desarrolladora Frontend con Astro, React, Nextjs, Typescript y Tailwindcss. Desarrolladora de Páginas Web en Wordpress.",
+      "Desarrolladora de páginas web con Wordpress y Astro, y de plataformas con  React, Nextjs, Typescript, Tailwindcss y Postgresql.",
   },
   {
-    period: "feb-2024 a sep-2024",
+    period: "feb/24 a sep/24",
     title: "Desarroladora Frontend",
     company: "Instituto Universitario Patagónico de las Artes (IUPA)",
     description:
       "Administradora del Campus Virtual Universitario (Plataforma Moodle). Desarrolladora Frontend de nuevos componentes y actualizaciones de Plataforma de Gestión Académica de Escuela de Arte Provincial, asociada a la universidad.",
   },
   {
-    period: "nov-2020 a feb-2024",
+    period: "nov/20 a feb/24",
     title: "Desarrolladora Frontend",
     company: "IUPA",
     description:
       "Desarroladora Frontend de la Plataforma de Gestión Académica de Escuela de Arte Provincial, asociada a la universidad con lenguaje C#. Desarrollo de páginas web de Soporte a los Usuarios y de la Biblioteca de la Universidad, entre otras.",
   },
   {
-    period: "mar-2018 a nov-2020",
+    period: "mar/18 a nov/20",
     title: "Técnica en Adm. Sistemas",
     company: "IUPA",
     description:
