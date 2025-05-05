@@ -7,9 +7,9 @@ import Title from '@components/ui/Title.astro';
 
 <section      
       class="flex flex-wrap relative overflow-hidden">
-      <Container className="items-center justify-center text-center mb-0 md:mb-8 pb-16 gap-3 md:gap-20 h-[350px] mt-11">
+      <Container className="items-center justify-center text-center mb-0  gap-3 md:gap-20 h-[250px] mt-11">
         <Title className="text-green-400">Idiomas</Title>
-        <Container className=" flex justify-center items-center mx-2">
+        <div class="flex justify-center items-center mx-2">
           <div class="flex gap-8 md:flex md:gap-20 pt-8">
             {languages.map((language) => (
               <div                
@@ -31,6 +31,6 @@ import Title from '@components/ui/Title.astro';
               </div>
             ))}
           </div>
-        </Container>
+        </div>
       </div>
     </section>
