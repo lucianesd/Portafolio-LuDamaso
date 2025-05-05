@@ -32,19 +32,19 @@ body {
 }
 
 .box-01 .inner {
-  background-image: url("http://localhost:5173/src/assets/projects/mitienda.png");
+  background-image: url("/public/projects/mitienda.webp");
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .box-02 .inner {
-  background-image: url("http://localhost:5173/src/assets/projects/rucaservices.png");
+  background-image: url("public/projects/rucaservices.webp");
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .box-03 .inner {
-  background-image: url("http://localhost:5173/src/assets/projects/azanza.jpg");
+  background-image: url("public/projects/azanza.webp");
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
