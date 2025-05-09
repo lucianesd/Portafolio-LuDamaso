@@ -9,5 +9,5 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   site: "https://lucianesd.github.io/",
-  //base: "Portafolio-LuDamaso",
+  base: "Portafolio-LuDamaso",
 });
