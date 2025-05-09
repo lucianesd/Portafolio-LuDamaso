@@ -8,12 +8,12 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { href: "/", text: "Inicio" },
-  { href: "/#habilidades", text: "Habilidades" },
-  { href: "/#proyectos", text: "Proyectos" },
-  { href: "/#experiencia", text: "Experiencia" },
-  { href: "/#idiomas", text: "Idiomas" },
-  { href: "/#sobre-mi", text: "Sobre Mi" },
+  { href: "/Portafolio-LuDamaso/", text: "Inicio" },
+  { href: "/Portafolio-LuDamaso/#habilidades", text: "Habilidades" },
+  { href: "/Portafolio-LuDamaso/#proyectos", text: "Proyectos" },
+  { href: "/Portafolio-LuDamaso/#experiencia", text: "Experiencia" },
+  { href: "/Portafolio-LuDamaso/#idiomas", text: "Idiomas" },
+  { href: "/Portafolio-LuDamaso/#sobre-mi", text: "Sobre Mi" },
 ];
 
 const rmTrailingSlash = (path: string): string => {
@@ -28,8 +28,8 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
   <div class="max-w-5xl mx-auto flex items-center justify-between px-4">
    
     <div class="flex items-center gap-x-2">
-      <a href="/" class="flex items-center gap-x-2">
-        <img class="w-auto h-13" src="/favicon.png" alt="Logo de Luciane Damaso"/>       
+      <a href="/Portafolio-LuDamaso/" class="flex items-center gap-x-2">
+        <img class="w-auto h-13" src="/Portafolio-LuDamaso/favicon.png" alt="Logo de Luciane Damaso"/>       
       </a>
     </div>
    

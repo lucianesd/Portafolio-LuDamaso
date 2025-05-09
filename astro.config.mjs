@@ -8,6 +8,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site: "https://lucianesd.github.io",
+  site: "https://lucianesd.github.io/",
   base: "Portafolio-LuDamaso",
 });
