@@ -32,19 +32,19 @@ body {
 }
 
 .box-01 .inner {
-  background-image: url("/Portafolio-LuDamaso/projects/mitienda.webp");
+  background-image: url("/projects/mitienda.webp");
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .box-02 .inner {
-  background-image: url("/Portafolio-LuDamaso/projects/rucaservices.webp");
+  background-image: url("/projects/rucaservices.webp");
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .box-03 .inner {
-  background-image: url("/Portafolio-LuDamaso/projects/azanza.webp");
+  background-image: url("/projects/azanza.webp");
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
