@@ -121,29 +121,36 @@ export const languages = [
 //Proyectos
 export const projects = [
   {
-    name: "Tienda Virtual",
-    descripcion:
-      "Tienda virtual demonstrativa con login, carrito de compras y passarela de pagos con Nextjs, Tpescript, Sanity y Stripe",
-    tecnologias: ["Nextjs", "Typescript", "Sanity", "Stripe"],
-    textoBoton: "Video",
-    enlace: "#",
-    tieneIcono: true,
+    title: "Tienda Virtual",
+    description:
+      "Tienda virtual demonstrativa con login, carrito de compras y pasarela de pagos con Nextjs, Typescript, Sanity y Stripe.",
+    link: "https://youtu.be/wXUnz03lKg4", // enlace al video
+    text: "Ver Demo",
+    icon: "/icons/white-github.png", // para el repo de Github
+    iconDescription: "github",
+    image: "/projects/mitienda.webp",
+    repoUrl: "https://github.com/lucianesd/mi-tienda-app",
   },
   {
-    nombre: "Ruca Services",
-    descripcion:
-      "Página web creada para el cliente Ruca Services creada con Astro, React, Typescript, Tailwind CSS",
-    tecnologias: ["Astro", "React", "Typescript", "Tailwind CSS"],
-    textoBoton: "Enlace",
-    enlace: "https://rucaservices.com.ar/",
-    tieneIcono: true,
+    title: "Ruca Services",
+    description:
+      "Pagina web del cliente Ruca Services, creada con Astro, Typescript, Tailwind CSS y integrada con WhatsApp.",
+    link: "https://rucaservices.com.ar/",
+    text: "Visitar Sitio",
+    icon: "/icons/white-www.png",
+    iconDescription: "página web",
+    image: "/projects/rucaservices.webp",
+    repoUrl: "https://rucaservices.com.ar/",
   },
   {
-    nombre: "Página Web de Azanza",
-    descripcion:
-      "Página web creada en Wordpress de administración de barrios y condominios para el cliente Administraciones Azanza",
-    tecnologias: ["Wordpress"],
-    textoBoton: "Enlace",
-    enlace: "https://azanza.com.ar/",
+    title: "Azanza Administraciones",
+    description:
+      "Página web creada en Wordpress de administración de barrios y condominios para el cliente Azanza Administraciones.",
+    link: "https://azanza.com.ar",
+    text: "Visitar Sitio",
+    icon: "/icons/white-www.png",
+    image: "/projects/azanza.webp",
+    iconDescription: "página web",
+    repoUrl: "https://azanza.com.ar",
   },
 ];
