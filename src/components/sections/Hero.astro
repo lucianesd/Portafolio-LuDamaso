@@ -20,34 +20,28 @@ const img = '@public/images/perfil.webp';
               <Paragraph className="leading-relaxed">
                 Desarrolladora Frontend con más de 4 años de experiencia en Desarrollo Web.
                </Paragraph>
-               <Paragraph className="leading-relaxed">
-                Apasionada por construir puentes entre la tecnología y las personas a través de experiencias digitales intuitivas.
-               </Paragraph>
                <Paragraph className="leading-relaxed my-1">
-                 Soy brasileña, y la Patagonia Argentina (General Roca) ha sido mi hogar durante los últimos 13 años.
+                 Me especialicé en la creación de interfaces de usuario y la optimización de su experiencia. 
                 </Paragraph>
-                <Paragraph>
-                Busco siempre una solución personalizada y efectiva para cada cliente.              
-              </Paragraph>
+                <Paragraph className="leading-relaxed">
+                  Utlizando lenguajes como Javascript, Typescript y C#, plataformas como Wordpress, bases de datos como Postgresql y Mysql, y frameworks como Blazor, entre otros. 
+                </Paragraph>                
             </article>
-            <div class="flex flex-row flex-cols-1 md:flex-cols-2 justify-start mt-0 lg:mt-3 ms-4">
-              <a href={CV} download>
-                <Button imageSrc="/icons/doc.png" text="CV" description="botón de download de curriculum de Luciane">
-                CV
-                </Button>
-              </a>
-              <a href="https://ar.linkedin.com/in/luciane-souza-damaso" aria-label ="linkedin de Luciane Damaso">
-                <SocialButton imageSrc="/icons/linkedin.png" description="icono de linkedin de Luciane" />
-                </SocialButton>
-              </a>
-              <a href="https://github.com/lucianesd?tab=repositories" aria-label ="github de Luciane Damaso">
-                <SocialButton imageSrc="/icons/github.png" description="icono de github del perfil de Luciane" />
-                
-              </a>
+            <div class="flex flex-row flex-cols-1 md:flex-cols-2 justify-start mt-0 lg:mt-3 ms-4 gap-1 md:gap-3">
               <a href="mailto:lusdamaso@gmail.com" aria-label ="correo electrónico de Luciane Damaso">
-                <SocialButton imageSrc="/icons/mail.png" description='icono de correo electrónico de Luciane' />
-                </SocialButton>
+                <Button imageSrc="/icons/mail.png" text="lusdamaso@gmail.com" description='icono de correo electrónico de Luciane'/>
               </a>
+              <a href={CV} download>
+                <Button imageSrc="/icons/doc.png" text="CV" description="botón de download de curriculum de Luciane"/>               
+              </a>         
+            </div>
+              <div class="flex flex-row flex-cols-1 md:flex-cols-2 justify-start mt-8 lg:mt-3 gap-1 ms-4 md:gap-3">                
+            <a href="https://ar.linkedin.com/in/luciane-souza-damaso" aria-label ="linkedin de Luciane Damaso">
+                <SocialButton imageSrc="/icons/linkedin.png" description="icono de linkedin de Luciane" />             
+            </a>
+            <a href="https://github.com/lucianesd?tab=repositories" aria-label ="github de Luciane Damaso">
+              <SocialButton imageSrc="/icons/github.png" description="icono de github del perfil de Luciane" />              
+            </a>
             </div>
           </div>
           <div class="justify-center items-center lg:max-w-lg lg:w-full md:w-1/2 pt-[-14] pb-6 lg:pb-0">
