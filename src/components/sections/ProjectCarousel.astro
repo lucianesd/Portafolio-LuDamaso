@@ -1,0 +1,55 @@
+---
+import Card from '@components/ui/Card.astro';
+import { projects } from 'src/data/constants';
+import Container from '@components/ui/Container.astro';
+---
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+<section class="relative overflow-hidden text-white">
+  <Container className="px-5 pt-16">
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="text-blue-400 mb-4 text-3xl font-bold">Mis Últimos Proyectos</h2>
+      <p class="text-lg text-gray-400 max-w-3xl mx-4 md:mx-auto">
+        A seguir, algunos de mis proyectos más recientes.
+      </p>
+    </div>
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+    {projects.map((project) => (
+      <div class="swiper-slide" >
+        <Card
+          title={project.title}
+          description={project.description}
+          link={project.link}          
+          icon={project.icon}
+          iconDescription={project.iconDescription}
+          image={project.image}
+          secondUrl={project.secondUrl}
+          className="h-full"
+        />
+      </div>
+    ))}
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+</Container>
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script is:inline>
+  new Swiper('.swiper', {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    spaceBetween: 24,
+    slidesPerView: 1,
+    breakpoints: {
+      640: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+  });
+</script>

@@ -1,5 +1,10 @@
 @import "tailwindcss";
+@import "swiper/css";
+@import "swiper/css/navigation";
 
+:root {
+  --swiper-navigation-size: 8px; /* Ajusta este valor para reducir la altura de la flecha */
+}
 html {
   scroll-behavior: smooth;
 }
@@ -29,4 +34,28 @@ body {
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
   width: 100%;
+}
+/* personalizacion de las flechas del carrusel */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #38bdf8; /* Tailwind blue-400 */
+  background: rgba(20, 30, 50, 0.7);
+  border-radius: 50%;
+  width: 80px; /* Reduce el ancho del botón */
+  height: 40px; /* Reduce la altura del botón */
+  transition: background 0.2s;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #2563eb; /* Tailwind blue-600 */
+  color: #fff;
 }

@@ -121,36 +121,44 @@ export const languages = [
 //Proyectos
 export const projects = [
   {
-    title: "Tienda Virtual",
+    title: "La Serendipia",
     description:
-      "Tienda virtual demonstrativa con login, carrito de compras y pasarela de pagos con Nextjs, Typescript, Sanity y Stripe.",
-    link: "https://youtu.be/wXUnz03lKg4", // enlace al video
-    text: "Ver Demo",
-    icon: "/icons/white-github.png", // para el repo de Github
-    iconDescription: "github",
-    image: "/projects/mitienda.webp",
-    repoUrl: "https://github.com/lucianesd/mi-tienda-app",
+      "P+agina web con la tienda virtual del cliente La Serendipia, creada con Wordpress y Woocommerce.",
+    link: "https://laserendipia.com.ar", // enlace al video
+    icon: "/icons/white-www.png",
+    iconDescription: "pagina web",
+    image: "/projects/serendipia.webp",
+    secondUrl: "https://laserendipia.com.ar",
   },
   {
     title: "Ruca Services",
     description:
-      "Pagina web del cliente Ruca Services, creada con Astro, Typescript, Tailwind CSS y integrada con WhatsApp.",
+      "Página web del cliente Ruca Services, creada con Astro, Typescript, Tailwind CSS y integrada con WhatsApp.",
     link: "https://rucaservices.com.ar/",
-    text: "Visitar Sitio",
-    icon: "/icons/white-www.png",
+    icon: "/icons/white-www.png", // icono de Astro
     iconDescription: "página web",
     image: "/projects/rucaservices.webp",
-    repoUrl: "https://rucaservices.com.ar/",
+    secondUrl: "https://rucaservices.com.ar/",
   },
   {
     title: "Azanza Administraciones",
     description:
       "Página web creada en Wordpress de administración de barrios y condominios para el cliente Azanza Administraciones.",
     link: "https://azanza.com.ar",
-    text: "Visitar Sitio",
     icon: "/icons/white-www.png",
     image: "/projects/azanza.webp",
-    iconDescription: "página web",
-    repoUrl: "https://azanza.com.ar",
+    iconDescription: "página web de azanza",
+    secondUrl: "https://azanza.com.ar",
+  },
+  {
+    title: "Tienda Virtual",
+    description:
+      "Tienda virtual demonstrativa con login, carrito de compras y pasarela de pagos con Nextjs, Typescript, Sanity y Stripe.",
+    link: "https://youtu.be/wXUnz03lKg4", // enlace al video
+
+    icon: "/icons/white-github.png", // para el repo de Github
+    iconDescription: "github",
+    image: "/projects/mitienda.webp",
+    secondUrl: "https://github.com/lucianesd/mi-tienda-app",
   },
 ];
