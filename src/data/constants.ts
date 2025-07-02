@@ -125,7 +125,7 @@ export const projects = [
     description:
       "P+agina web con la tienda virtual del cliente La Serendipia, creada con Wordpress y Woocommerce.",
     link: "https://laserendipia.com.ar", // enlace al video
-    icon: "/icons/white-www.png",
+    icon: "/icons/enlace.png",
     iconDescription: "pagina web",
     image: "/projects/serendipia.webp",
     secondUrl: "https://laserendipia.com.ar",
@@ -135,7 +135,7 @@ export const projects = [
     description:
       "Página web del cliente Ruca Services, creada con Astro, Typescript, Tailwind CSS y integrada con WhatsApp.",
     link: "https://rucaservices.com.ar/",
-    icon: "/icons/white-www.png", // icono de Astro
+    icon: "/icons/enlace.png", // icono de Astro
     iconDescription: "página web",
     image: "/projects/rucaservices.webp",
     secondUrl: "https://rucaservices.com.ar/",
@@ -145,7 +145,7 @@ export const projects = [
     description:
       "Página web creada en Wordpress de administración de barrios y condominios para el cliente Azanza Administraciones.",
     link: "https://azanza.com.ar",
-    icon: "/icons/white-www.png",
+    icon: "/icons/enlace.png",
     image: "/projects/azanza.webp",
     iconDescription: "página web de azanza",
     secondUrl: "https://azanza.com.ar",
