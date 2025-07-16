@@ -143,7 +143,7 @@ export const projects = [
   {
     title: "Azanza Administraciones",
     description:
-      "Página web creada en Wordpress de administración de barrios y condominios para el cliente Azanza Administraciones.",
+      "Página web creada en Wordpress de admin. de edificios y barrios para el cliente Azanza Administraciones.",
     link: "https://azanza.com.ar",
     icon: "/icons/enlace.png",
     image: "/projects/azanza.webp",
