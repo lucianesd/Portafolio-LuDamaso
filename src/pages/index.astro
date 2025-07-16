@@ -1,14 +1,13 @@
 ---
-
 import Hero from '@components/sections/Hero.astro';
 import Layout from 'src/layouts/Layout.astro';
-
 import SectionContainer from '@components/layout/SectionContainer.astro';
- import Skills from '@components/sections/Skills.astro';
+import Skills from '@components/sections/Skills.astro';
 import Experiences from '@components/sections/Experiences.astro';
 import Languages from '@components/sections/Languages.astro';
 import AboutMe from '@components/sections/AboutMe.astro';
 import ProjectCarousel from '@components/sections/ProjectCarousel.astro';
+
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -20,16 +19,16 @@ import ProjectCarousel from '@components/sections/ProjectCarousel.astro';
 	</SectionContainer>
 	<SectionContainer id="habilidades" class="py-8">
 		<Skills />
+	</SectionContainer>	
+	<SectionContainer id="proyectos" class="py-8">
+		<ProjectCarousel />
+	</SectionContainer>	
+	<SectionContainer id="idiomas" class="py-8">
+		<Languages />
 	</SectionContainer>
 	<SectionContainer id="experiencia" class="py-8">
 		<Experiences />
 	</SectionContainer>
-	<SectionContainer id="idiomas" class="py-8">
-		<Languages />
-	</SectionContainer>
-	<SectionContainer id="proyectos" class="py-8">
-		<ProjectCarousel />
-	</SectionContainer>	
 	<SectionContainer id="sobre-mi" class="py-8">
 		<AboutMe />
 	</SectionContainer>	

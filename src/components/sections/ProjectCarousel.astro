@@ -5,7 +5,6 @@ import Container from '@components/ui/Container.astro';
 ---
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-
 <section class="relative overflow-hidden text-white">
   <Container className="px-5 pt-16">
     <div class="text-center mb-12 md:mb-16">
@@ -15,37 +14,41 @@ import Container from '@components/ui/Container.astro';
       </p>
     </div>
 
-<div class="swiper">
-  <div class="swiper-wrapper">
-    {projects.map((project) => (
-      <div class="swiper-slide" >
-        <Card
-          title={project.title}
-          description={project.description}
-          link={project.link}          
-          icon={project.icon}
-          iconDescription={project.iconDescription}
-          image={project.image}
-          secondUrl={project.secondUrl}
-          className="h-full"
-        />
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {projects.map((project) => (
+          <div class="swiper-slide">
+            <Card
+              title={project.title}
+              description={project.description}
+              link={project.link}
+              icon={project.icon}
+              iconDescription={project.iconDescription}
+              image={project.image}
+              secondUrl={project.secondUrl}
+              className="h-full"
+            />
+          </div>
+        ))}
       </div>
-    ))}
-  </div>
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-</div>
-</Container>
+      <!-- Flechas de navegación -->
+        <div class="swiper-navigation-wrapper">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+  </Container>
+</section>
 
 <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script is:inline>
   new Swiper('.swiper', {
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
     spaceBetween: 24,
     slidesPerView: 1,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
     breakpoints: {
       640: { slidesPerView: 1 },
       768: { slidesPerView: 2 },
@@ -53,3 +56,57 @@ import Container from '@components/ui/Container.astro';
     },
   });
 </script>
+
+<style>
+  .swiper-wrapper {
+    margin-bottom: 30px;    
+  }  
+  /* Contenedor de las flechas */
+.swiper-navigation-wrapper {
+  margin-top: 16px;         /* espacio respecto al slider */
+  display: flex;
+  justify-content: center;
+  gap: 24px;                /* separación entre flechas */
+}
+
+/* Tamaño y estilo de las flechas */
+.swiper-button-prev,
+.swiper-button-next {
+  position: static;           /* Para que estén en flujo normal, si las usas debajo */
+  width: 24px;                /* Mitad de 48px original */
+  height: 24px;
+  color: #94A3B8;             /* Gris claro para la flecha */
+  background: transparent;    /* Fondo transparente */
+ 
+  border-radius: 50%;         /* Borde redondeado para círculo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;           /* Sin sombra para que sea limpio */
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+/* Al pasar el mouse, el borde y la flecha azules */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: #38bdf8;             /* Azul claro */
+  border-color: #38bdf8;
+}
+
+/* Flechas deshabilitadas */
+.swiper-button-disabled {
+  opacity: 0.4 !important;
+  pointer-events: none;
+  color: #94A3B8 !important;
+  border-color: #94A3B8 !important;
+}
+
+/* Ajusta el tamaño del icono (la flecha) */
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 20px; /* Tamaño proporcional al botón reducido */
+  font-weight: bold; /* Asegura que la flecha sea visible */
+}
+
+</style>

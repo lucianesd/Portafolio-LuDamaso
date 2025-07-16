@@ -123,7 +123,7 @@ export const projects = [
   {
     title: "La Serendipia",
     description:
-      "P+agina web con la tienda virtual del cliente La Serendipia, creada con Wordpress y Woocommerce.",
+      "Página web con la tienda virtual del cliente La Serendipia, creada con Wordpress y Woocommerce.",
     link: "https://laserendipia.com.ar", // enlace al video
     icon: "/icons/enlace.png",
     iconDescription: "pagina web",
